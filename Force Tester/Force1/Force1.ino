@@ -1,12 +1,5 @@
 int fsr1Pin = 0;     // the 9 FSR's are connected to analog pins from a0-a8
-int fsr2Pin = 1;
-int fsr3Pin = 2;
-int fsr4Pin = 3;
-int fsr5Pin = 4;
-int fsr6Pin = 5;
-int fsr7Pin = 6;
-int fsr8Pin = 7;
-int fsr9Pin = 8;
+
 int fsrReading;     // the analog reading from the FSR resistor divider
 int fsrVoltage;     // the analog reading converted to voltage
 unsigned long fsrResistance;  // The voltage converted to resistance, can be very big so make "long"
