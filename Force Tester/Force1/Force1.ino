@@ -1,5 +1,7 @@
-int fsr1Pin = 0;     // the 9 FSR's are connected to analog pins from a0-a8
+//Force sensing code for only 1 FSR 
 
+
+int fsrPin = 0;     // set the fsr pin to a0
 int fsrReading;     // the analog reading from the FSR resistor divider
 int fsrVoltage;     // the analog reading converted to voltage
 unsigned long fsrResistance;  // The voltage converted to resistance, can be very big so make "long"
