@@ -1,6 +1,6 @@
-#define SENSOR_PIN A0; //analog pin, takes the analog input of the FSR of 0 - 1023
-#define OUT_PIN A1; //the one pin that does not connect to the multiplexer
-#define muxPin1 10; // these three pins define the multiplexer inputs and the cycles.
+#define SENSOR_PIN A1; //analog pin, takes the analog input of the FSR of 0 - 1023
+#define OUT_PIN A0; //the one pin that does not connect to the multiplexer
+#define muxPin1 10; //these three pins define the multiplexer inputs and the cycles.
 #define muxPin2 11;
 #define muxPin3 12;
 
