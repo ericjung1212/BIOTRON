@@ -58,7 +58,6 @@
             this.sensor1.Size = new System.Drawing.Size(100, 100);
             this.sensor1.TabIndex = 0;
             this.sensor1.TabStop = false;
-            this.sensor1.Click += new System.EventHandler(this.sensor1);
             // 
             // sensor2
             // 
@@ -68,7 +67,6 @@
             this.sensor2.Size = new System.Drawing.Size(100, 100);
             this.sensor2.TabIndex = 1;
             this.sensor2.TabStop = false;
-            this.sensor2.Click += new System.EventHandler(this.sensor2);
             // 
             // sensor3
             // 
@@ -78,7 +76,6 @@
             this.sensor3.Size = new System.Drawing.Size(100, 100);
             this.sensor3.TabIndex = 2;
             this.sensor3.TabStop = false;
-            this.sensor3.Click += new System.EventHandler(this.sensor3);
             // 
             // sensor4
             // 
@@ -88,7 +85,6 @@
             this.sensor4.Size = new System.Drawing.Size(100, 100);
             this.sensor4.TabIndex = 3;
             this.sensor4.TabStop = false;
-            this.sensor4.Click += new System.EventHandler(this.sensor4);
             // 
             // sensor5
             // 
@@ -98,7 +94,6 @@
             this.sensor5.Size = new System.Drawing.Size(100, 100);
             this.sensor5.TabIndex = 4;
             this.sensor5.TabStop = false;
-            this.sensor5.Click += new System.EventHandler(this.sensor5);
             // 
             // sensor6
             // 
@@ -108,7 +103,6 @@
             this.sensor6.Size = new System.Drawing.Size(100, 100);
             this.sensor6.TabIndex = 5;
             this.sensor6.TabStop = false;
-            this.sensor6.Click += new System.EventHandler(this.sensor6);
             // 
             // sensor7
             // 
@@ -118,7 +112,6 @@
             this.sensor7.Size = new System.Drawing.Size(100, 100);
             this.sensor7.TabIndex = 6;
             this.sensor7.TabStop = false;
-            this.sensor7.Click += new System.EventHandler(this.sensor7);
             // 
             // sensor8
             // 
@@ -128,7 +121,6 @@
             this.sensor8.Size = new System.Drawing.Size(100, 100);
             this.sensor8.TabIndex = 7;
             this.sensor8.TabStop = false;
-            this.sensor8.Click += new System.EventHandler(this.sensor8);
             // 
             // sensor9
             // 
@@ -138,7 +130,6 @@
             this.sensor9.Size = new System.Drawing.Size(100, 100);
             this.sensor9.TabIndex = 8;
             this.sensor9.TabStop = false;
-            this.sensor9.Click += new System.EventHandler(this.sensor9);
             // 
             // serialPort1
             // 

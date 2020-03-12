@@ -26,16 +26,19 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        string arduinoinfo;
+        string str;
         string[] splitter = new string[9];
+        char[] separator = new char[] { '@' };
         float[] pressures = new float[9];
+        Color backcolor;
 
-        int counter = 0; //for test with the clicker
+        System.Threading.Thread Loop_Thread; //Declaring thread for infinite loop
+
         public Form1()
         {
             InitializeComponent();                     //Initialize 
             serialPort1.Open();                        //Open Serial Port
-            Thread Loop_Thread = new Thread(Loop);   //Begin Loop
+            Loop_Thread = new System.Threading.Thread(Loop);   //Begin Loop
             Loop_Thread.Start();
         }
 
@@ -50,84 +53,64 @@ namespace WindowsFormsApp1
 
         public void Read_String(object sender, SerialDataReceivedEventArgs e)
         {
-            arduinoinfo = serialPort1.ReadExisting();
-            splitter = arduinoinfo.Split("@"); //split incoming arduino string
+            str = serialPort1.ReadExisting();
+            splitter = str.Split(separator, StringSplitOptions.None); //split incoming arduino string
 
             //assign read pressures to pressures array
             for (int i = 0; i < splitter.Length; i++)
             {
-                float.TryParse(splitter[i], out float pressure[i]);
+                float.TryParse(splitter[0], NumberStyles.Any, CultureInfo.InvariantCulture, out pressures[i]);
             }
-        }
 
-        Thread.Delay(500);
-    }
+            Thread.Sleep(500);
+
+        }
 
 
         public void Display()
         {
             
+            for (int i = 0; i < pressures.Length; i++)
+            {
+                if (pressures[i] >= 0 && pressures[i] < 341)
+                    backcolor = Color.Yellow;
+                else if (pressures[i] >= 341 && pressures[i] < 682)
+                    backcolor = Color.Orange;
+                else if (pressures[i] >= 682 && pressures[i] <= 1023)
+                    backcolor = Color.Red;
+
+                switch(i)
+                {
+                    case 0:
+                        sensor1.BackColor = backcolor;
+                        break;
+                    case 1:
+                        sensor2.BackColor = backcolor;
+                        break;
+                    case 2:
+                        sensor3.BackColor = backcolor;
+                        break;
+                    case 3:
+                        sensor4.BackColor = backcolor;
+                        break;
+                    case 4:
+                        sensor5.BackColor = backcolor;
+                        break;
+                    case 5:
+                        sensor6.BackColor = backcolor;
+                        break;
+                    case 6:
+                        sensor7.BackColor = backcolor;
+                        break;
+                    case 7:
+                        sensor8.BackColor = backcolor;
+                        break;
+                    case 8:
+                        sensor9.BackColor = backcolor;
+                        break;
+                }
+            }
         }
+
     }
-        
-        private void PictureBox1(object sender, EventArgs e)
-        {
-            if (sensor1.BackColor == Color.Yellow)
-            {
-                sensor1.BackColor = Color.Red;
-                counter++;
-                textBox1.Text = $"# of clicks: { counter }";
-            }
-            else if (sensor1.BackColor == Color.Red)
-            {
-                sensor1.BackColor = Color.Yellow;
-                counter++;
-                textBox1.Text = $"# of clicks: { counter }";
-            }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            sensor2.BackColor = Color.Red;
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            sensor3.BackColor = Color.Red;
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            sensor4.BackColor = Color.Red;
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            sensor5.BackColor = Color.Red;
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            sensor6.BackColor = Color.Red;
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            sensor7.BackColor = Color.Red;
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            sensor8.BackColor = Color.Red;
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            sensor9.BackColor = Color.Red;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 }
